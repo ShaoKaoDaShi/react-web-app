@@ -8,7 +8,6 @@ import { BrowserRouter } from "react-router-dom";
 
 function render(props) {
   const { container } = props;
-  debugger
   const root = ReactDOM.createRoot(
     container ? container.querySelector("#root") : document.querySelector("#root")
   );
@@ -18,7 +17,7 @@ function render(props) {
    </BrowserRouter>
   );
 }
-
+console.log(document.cookie)
 if (!window.__POWERED_BY_QIANKUN__) {
   render({});
 }
