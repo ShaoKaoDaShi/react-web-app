@@ -1,11 +1,11 @@
-import {  Link, Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import Root from "./pages/Root";
 import Test from "./pages/Test";
 import { Button } from "antd";
+import Timer from './component/GlobalTimer'
+import timer from './store/index'
 function App() {
   console.log(process.env.NODE_ENV);
-
-
 
   return (
     <div>
@@ -17,12 +17,11 @@ function App() {
           <Button>reactLogo</Button>
         </Link>
       </header>
+      <Timer timer={timer}/>
       <div>
-      <div></div>
-          <Route path="/antdLogo/" component={Root} />
-          <Route path="/reactLogo/" component={Test} />
+        <Route path="/antdLogo/" component={Root} />
+        <Route path="/reactLogo/" component={Test} />
       </div>
-
     </div>
   );
 }

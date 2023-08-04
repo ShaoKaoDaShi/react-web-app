@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import timer from './store/index'
 
 function render(props) {
   const { container } = props;
@@ -28,6 +29,7 @@ export async function bootstrap() {
 
 export async function mount(props) {
   console.log("[react16] props from main framework", props);
+  timer.setTimer(props?.timer?.secondsPassed+100)
   render(props);
 }
 
