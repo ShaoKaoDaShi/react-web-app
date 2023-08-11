@@ -4,6 +4,7 @@ import Test from "./pages/Test";
 import { Button } from "antd";
 import Timer from './component/GlobalTimer'
 import timer from './store/index'
+import Nprogress from "./component/Nprogress";
 function App() {
   console.log(process.env.NODE_ENV);
 
@@ -17,6 +18,13 @@ function App() {
           <Button>reactLogo</Button>
         </Link>
       </header>
+      <button onClick={()=>{
+        Nprogress.start()
+        setTimeout(()=>{
+          Nprogress.done()
+
+        },2000)
+      }}>nprogress</button>
       <Timer timer={timer}/>
       <div>
         <Route path="/antdLogo/" component={Root} />
